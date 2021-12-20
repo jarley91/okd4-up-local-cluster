@@ -241,9 +241,11 @@ Verifica y espera que los nodos y operadores estén listos, esto toma un tiempo 
 Después de una espera algo larga, tenemos nuestro cluster local listo:
 
 ![nodes-3, nodes 3](images/nodes-3.png)
+![co-2, co 2](images/co-2.png)
 ![top-1, top 1](images/top-1.png)
 ![console-1, console 1](images/console-1.png)
 ![console-2, console 2](images/console-2.png)
+![console-3, console 3](images/console-3.png)
 
 Post instalación
 ===
