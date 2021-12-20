@@ -83,11 +83,11 @@ Ejecuta el script para crear, configurar e iniciar tu servidor HTTP(Apache) y Ba
 sh create-http-haproxy-server.sh
 ```
 
-Aprovisiona las VMs
+Aprovisiona tus VMs
 ===
 Para instalar un cluster OKD/OCP local debemos de crear las VMs para el bootstrap, masters, infras y workers
 
-Priemero creamos los ISOs con la configuración necesaria para iniciar e instalar Fedora CoreOS ejecuta el siguiente script: 
+Priemero creamos los ISOs con la configuración necesaria para iniciar e instalar Fedora CoreOS, ejecuta el siguiente script: 
 
 ```shell
 sh create-isos-okd-4-install.sh
