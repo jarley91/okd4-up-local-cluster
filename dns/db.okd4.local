@@ -1,0 +1,41 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ns1.okd4.local. root (
+			      3		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	localhost.
+@	IN	A	127.0.0.1
+@	IN	AAAA	::1
+; name servers - NS records
+    IN      NS      ns1.okd4.local.
+
+; name servers - A records
+ns1.okd4.local.							IN  A   192.168.31.2
+smtp.okd4.local.						IN  A   192.168.31.166
+
+helper.okd4.local.					IN  A   192.168.31.166
+helper.home.okd4.local.			IN  A   192.168.31.166
+;
+api.home.okd4.local.        IN  A   192.168.31.166
+api-int.home.okd4.local.    IN  A   192.168.31.166
+;
+*.apps.home.okd4.local.     IN  A   192.168.31.166
+;
+bootstrap.home.okd4.local.  IN  A   192.168.31.167
+;
+master-1.home.okd4.local.		IN  A   192.168.31.168
+master-2.home.okd4.local.		IN  A   192.168.31.169
+master-3.home.okd4.local.		IN  A   192.168.31.170
+;
+infra-1.home.okd4.local.    IN  A   192.168.31.171
+infra-2.home.okd4.local.    IN  A   192.168.31.172
+;
+worker-1.home.okd4.local.		IN  A   192.168.31.173
+worker-2.home.okd4.local.		IN  A   192.168.31.174
+worker-3.home.okd4.local.		IN  A   192.168.31.175

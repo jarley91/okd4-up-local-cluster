@@ -1,0 +1,34 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ns1.okd4.local. root (
+			      3		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	localhost.
+1.0.0	IN	PTR	localhost.
+
+; name servers - NS records
+      IN      NS      ns1.okd4.local.
+
+;
+166.31  IN      PTR     api.home.okd4.local.
+166.31  IN      PTR     api-int.home.okd4.local.
+;
+167.31  IN      PTR     bootstrap.home.okd4.local.
+;
+168.31  IN      PTR     master-1.home.okd4.local.
+169.31  IN      PTR     master-2.home.okd4.local.
+170.31  IN      PTR     master-3.home.okd4.local.
+;
+171.31  IN      PTR     infra-1.home.okd4.local.
+172.31  IN      PTR     infra-2.home.okd4.local.
+;
+173.31  IN      PTR     worker-1.home.okd4.local.
+174.31  IN      PTR     worker-2.home.okd4.local.
+175.31  IN      PTR     worker-3.home.okd4.local.
+
