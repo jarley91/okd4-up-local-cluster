@@ -254,3 +254,4 @@ Iré publicando...
 Referencia oficial de configuración e instalación: 
 ===
 https://docs.okd.io/latest/installing/installing_bare_metal/installing-bare-metal.html
+https://docs.okd.io/
