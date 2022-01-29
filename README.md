@@ -1,6 +1,6 @@
 # okd4-up-local-cluster
 
-Vamos a instalar un cluster local (bare metal aprovisionamiento UPI) utilizando VirtualBox para la administración y ejecución de nuestras máquinas virtuales, esto debido a que VisrtualBox es el más accesible por la mayoría de usuarios que deseen realizar esta instalación con el fin de aprender y conocer más sobre OKD/OCP
+Vamos a instalar un cluster local (bare metal aprovisionamiento UPI) utilizando VirtualBox para la administración y ejecución de nuestras máquinas virtuales, esto debido a que VirtualBox es el más accesible por la mayoría de los usuarios que deseen realizar esta instalación con el fin de aprender y conocer más sobre OKD/OCP 
 
 Requisitos de Hardware:
 ===
@@ -20,7 +20,7 @@ Con estos recursos puedes completar la instalación, pero tendrás alertas de de
 
 Sistema Operativo - Host
 ===
- Linux, en mi caso uso Arch Linux con DE kde, pudes usar el de tu preferencia.
+ Linux, en mi caso uso Arch Linux con DE kde, puedes usar el de tu preferencia.
 
 | Software instalado |
 | :--- |
@@ -85,9 +85,9 @@ sh create-http-haproxy-server.sh
 
 Aprovisiona tus VMs
 ===
-Para instalar un cluster OKD/OCP local debemos de crear las VMs para el bootstrap, masters, infras y workers
+Para instalar un cluster OKD/OCP local debemos de crear las VMs para el bootstrap, masters, infras y workers 
 
-Priemero creamos los ISOs con la configuración necesaria para iniciar e instalar Fedora CoreOS, ejecuta el siguiente script: 
+Primero creamos los ISOs con la configuración necesaria para iniciar e instalar Fedora CoreOS, ejecuta el siguiente script: 
 
 ```shell
 sh create-isos-okd-4-install.sh
@@ -127,10 +127,10 @@ Edita el archivo install-config.yaml dentro de la carpeta utils:
 | baseDomain | Tu nombre de dominio base, debe de coincidir con el valor DOMAIN_NAME en el archivo .env en la carpeta scripts |
 | metadata/name | Tu nombre de dominio base, debe de coincidir con el valor CLUSTER_NAME en el archivo .env en la carpeta scripts |
 | networking/machineNetwork/cidr | Según tu subnet |
-| pullSecret | Puedes usar el que tiene por defecto, si deseas un cluster de prueba por 60 días habiliatado con lo que provee RedHat obten tu pull secret desde https://console.redhat.com/openshift/install/pull-secret y reemplazas el valor |
+| pullSecret | Puedes usar el que tiene por defecto, si deseas un cluster de prueba por 60 días habilitado  con lo que provee RedHat obtén tu pull secret desde https://console.redhat.com/openshift/install/pull-secret y reemplazas el valor |
 | sshKey | Debes de usar el valor del archivo que contiene el public key que creaste con ssh-keygen (okd4.key.pub)  |
 
-En este punt ya podemos iniciar la instalación:
+En este punto ya podemos iniciar la instalación:
 
 Ejecuta el siguiente script, esto crea los manifiestos, configura que los masters no sean programables/schedulable, crea los ignitios y sube los archivos de instalación al servidor WEB:
 
@@ -146,7 +146,7 @@ Inicia tu servidor bootstrap, espera a que termine la instalación y cuando rein
 
 ![boot-1-bootstrap, boot 1 bootstrap](images/boot-1-bootstrap.png)
 
-Antes que se incie nuevamente la instalación apaga el servidor y desmonta el archivo ISO:
+Antes que se inicie nuevamente la instalación apaga el servidor y desmonta el archivo ISO:
 
 ![umount-iso, umount iso](images/umount-iso.jpg)
 
@@ -154,7 +154,7 @@ Inicia nuevamente el servidor:
 
 ![boot-2-bootstrap, boot 2 bootstrap](images/boot-2-bootstrap.png)
 
-El servidor se reinciará cuando termine de descargar lo necesario y ahora observarás dos entradas de inicio del kernel:
+El servidor se reiniciará cuando termine de descargar lo necesario y ahora observarás dos entradas de inicio del kernel:
 
 ![boot-3-bootstrap, boot 3 bootstrap](images/boot-3-bootstrap.png)
 
@@ -166,7 +166,7 @@ ssh -i path-to/okd4.key core@bootstrap.home.okd4.local
 
 ![ssh-access-bootstrap, ssh access bootstrap](images/ssh-access-bootstrap.png)
 
-Copia los binarios oc y kubectl al servidor bootstrap, esto servira para validar como va nuestro cluster y aplicar ciertas configuraciones de ser neceario:
+Copia los binarios oc y kubectl al servidor bootstrap, esto servirá para validar como va nuestro cluster y aplicar ciertas configuraciones de ser necesario:
 
 ```shell
 cd scripts/
@@ -193,7 +193,7 @@ Inicia tus servidores masters, cuando termine la instalación y reinicia por pri
 
 ![boot-1-master, boot 1 master](images/boot-1-master.png)
 
-Puedes verificar el estado del incio de tu cluster con lo siguiente:
+Puedes verificar el estado del inicio de tu cluster con lo siguiente:
 
 ```shell
 cd scripts/
@@ -232,7 +232,7 @@ cd ${OKD4_WORK_DIR}/${PREFIX_NAME_CLUSTER_SERVER}-dir-install/downloads/openshif
 
 ![csr-2, csr 2](images/csr-2.png)
 
-Verifica y espera que los nodos y operadores estén listos, esto toma un tiempo dependiendo de cuan rápido descarge las imágenes que necesitan los infras/workers para crear los objetos necesarios:
+Verifica y espera que los nodos y operadores estén listos, esto toma un tiempo dependiendo de cuan rápido descargue las imágenes que necesitan los infras/workers para crear los objetos necesarios:
 
 ![nodes-1, nodes 1](images/nodes-1.png)
 ![co-1, co 1](images/co-1.png)
